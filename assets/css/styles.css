@@ -2116,7 +2116,7 @@ body[data-page="dashboard"] #main-content {
   .profile-symbol {
     width: 32px;
   }
-  .mobile-menu {
+  .mobile-menu.icon-btn {
     display: inline-flex;
     margin-left: 0;
     color: var(--green);
