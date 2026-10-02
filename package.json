@@ -5,8 +5,13 @@
   "description": "Clara — acolhimento e gestão do cuidado. HTML, CSS e JavaScript.",
   "scripts": {
     "start": "node server.cjs",
+    "build": "node scripts/build.cjs",
+    "preview": "node server.cjs dist",
     "test": "node --test tests/*.test.cjs",
     "test:e2e": "node tests/e2e.cjs"
+  },
+  "engines": {
+    "node": "24.x"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",

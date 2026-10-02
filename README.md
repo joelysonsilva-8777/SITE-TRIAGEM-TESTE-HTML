@@ -6,7 +6,7 @@ A identidade visual reúne cabeçalho institucional, navegação horizontal, sup
 
 ## Abrir o projeto
 
-Com Node.js instalado, execute na pasta do projeto:
+Com Node.js 24 instalado, execute na pasta do projeto:
 
 ```sh
 npm install
@@ -14,6 +14,38 @@ npm start
 ```
 
 Acesse **[http://localhost:4173](http://localhost:4173)**. Não há etapa de compilação.
+
+## Deploy na Vercel
+
+O projeto está configurado como um site estático. O arquivo `vercel.json` define a instalação, o build e a pasta publicada, conforme a [documentação da Vercel](https://vercel.com/docs/project-configuration/vercel-json).
+
+1. Envie o projeto, incluindo `package-lock.json`, `vercel.json` e `scripts/build.cjs`, para seu repositório Git.
+2. Na Vercel, escolha **Add New → Project** e importe esse repositório.
+3. Use como **Root Directory** a pasta que contém `package.json` e `vercel.json` (a raiz, se o repositório contém somente este projeto).
+4. Confira as configurações abaixo e clique em **Deploy**.
+
+| Configuração | Valor |
+| --- | --- |
+| Framework Preset | Other |
+| Install Command | `npm ci --omit=dev` |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+| Node.js Version | `24.x` |
+| Environment Variables | Nenhuma necessária |
+
+O build usa apenas recursos nativos do Node.js e copia as sete páginas e `assets/` para `dist/`. As dependências de testes não são instaladas no deploy. O servidor `server.cjs` é usado localmente; a Vercel serve os arquivos publicados diretamente. Os links `.html` e parâmetros como `triagem.html?patient=...` são preservados. Não configure um redirecionamento geral para `index.html`, pois cada página tem seu próprio conteúdo.
+
+Para conferir os mesmos arquivos que serão publicados:
+
+```sh
+npm ci
+npm run build
+npm run preview
+```
+
+Abra **[http://localhost:4173](http://localhost:4173)**. Pare qualquer `npm start` que já esteja usando essa porta antes de executar o preview. Não é necessário versionar `dist/`; a Vercel gera essa pasta em cada deploy.
+
+Os dados continuam no `localStorage` de cada navegador. O domínio da Vercel terá uma cópia independente dos dados de localhost; domínios de preview e produção também mantêm cópias separadas.
 
 Também é possível abrir `index.html` diretamente. O servidor local é recomendado para manter as sete páginas na mesma origem e tornar a persistência entre páginas mais previsível. Os dados de `file://` e `http://localhost:4173` são independentes.
 

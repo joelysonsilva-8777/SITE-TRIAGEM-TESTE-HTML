@@ -4,7 +4,7 @@ const path = require("node:path");
 const { spawn } = require("node:child_process");
 const { launchBrowser } = require("./browser.cjs");
 const AxeBuilder = require("@axe-core/playwright").default;
-const base = "http://localhost:4173";
+const base = "http://localhost:" + (process.env.PORT || 4173);
 let server, browser;
 const checks = [];
 const pass = (name) => {
@@ -16,7 +16,7 @@ async function startServer() {
     await fetch(base);
     return;
   } catch {}
-  server = spawn(process.execPath, ["server.cjs"], {
+  server = spawn(process.execPath, ["server.cjs", process.env.TEST_STATIC_ROOT || "."], {
     cwd: path.join(__dirname, ".."),
     stdio: "ignore",
     windowsHide: true,

@@ -1,12 +1,19 @@
 const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
-const root = __dirname;
+const root = path.resolve(__dirname, process.argv[2] || ".");
+if (!fs.existsSync(path.join(root, "index.html"))) {
+  console.error("index.html ausente. Para visualizar dist/, execute npm run build primeiro.");
+  process.exit(1);
+}
 const types = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".svg": "image/svg+xml",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".png": "image/png",
   ".woff2": "font/woff2",
   ".json": "application/json; charset=utf-8",
 };
