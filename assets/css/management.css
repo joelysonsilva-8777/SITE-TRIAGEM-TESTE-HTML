@@ -1,9 +1,9 @@
 ﻿/* Team directory and reports */
 .management-page {
-  --mg-green: #00646d;
-  --mg-ink: #202c32;
-  --mg-muted: #58656b;
-  --mg-line: #d9dee0;
+  --mg-green: #0648D7;
+  --mg-ink: #1F2937;
+  --mg-muted: #526175;
+  --mg-line: #DCE5EF;
 }
 .mg-sr-only {
   position: absolute;
@@ -32,7 +32,7 @@
   align-items: center;
   gap: 18px;
   padding: 25px 24px;
-  border-right: 1px solid #d9dee0;
+  border-right: 1px solid #DCE5EF;
   min-width: 0;
 }
 .mg-team-stat:last-child {
@@ -255,7 +255,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  color: #00646d;
+  color: #0648D7;
 }
 .mg-availability-control > span {
   position: absolute;
@@ -279,7 +279,7 @@
 }
 .mg-availability-control option {
   background: #fff;
-  color: #202c32;
+  color: #1F2937;
 }
 .mg-control-busy {
   color: #305f81;
@@ -343,20 +343,20 @@
   font-size: 23px;
   font-weight: 600;
   margin: 0 0 6px;
-  color: #202c32;
+  color: #1F2937;
 }
 .mg-profile p {
   font-size: 14px;
   line-height: 1.5;
   margin: 0 0 10px;
-  color: #58656b;
+  color: #526175;
 }
 .mg-presence {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   font-size: 12px;
-  color: #00646d;
+  color: #0648D7;
   border: 1px solid currentColor;
   padding: 3px 7px;
   white-space: nowrap;
@@ -378,7 +378,7 @@
   gap: 18px;
   padding: 20px 0;
   margin-bottom: 24px;
-  border-block: 1px solid #d9dee0;
+  border-block: 1px solid #DCE5EF;
 }
 .mg-profile-facts > div {
   display: flex;
@@ -386,7 +386,7 @@
   gap: 7px;
 }
 .mg-profile-facts span {
-  color: #58656b;
+  color: #526175;
   font-size: 12px;
 }
 .mg-profile-facts strong {
@@ -404,7 +404,7 @@
 }
 .mg-modal-section-title > span {
   font-size: 12px;
-  color: #00646d;
+  color: #0648D7;
   border: 1px solid #b8c4c8;
   padding: 2px 7px;
 }
@@ -416,7 +416,7 @@
   padding: 15px;
   text-align: left;
   background: #fff;
-  border: 1px solid #d9dee0;
+  border: 1px solid #DCE5EF;
   cursor: pointer;
   margin-top: 8px;
 }
@@ -437,20 +437,20 @@
 }
 .mg-assignment-name > span {
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
   margin-top: 5px;
 }
 .mg-assignment > svg {
   flex-shrink: 0;
-  color: #00646d;
+  color: #0648D7;
 }
 .mg-soft-empty {
-  border: 1px solid #d9dee0;
+  border: 1px solid #DCE5EF;
   background: #f5f6f3;
   padding: 30px 18px;
   text-align: center;
   font-size: 14px;
-  color: #58656b;
+  color: #526175;
 }
 .mg-modal-intro {
   font-size: 14px;
@@ -459,13 +459,13 @@
 }
 .mg-data-note {
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
   margin: 17px 0 0;
 }
 .mg-table-secondary {
   display: block;
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
   margin-top: 4px;
 }
 .mg-shifts-table {
@@ -493,7 +493,7 @@
 .mg-period-tab {
   padding: 11px 19px;
   border: 0;
-  border-right: 1px solid #d9dee0;
+  border-right: 1px solid #DCE5EF;
   background: #fff;
   color: #425a63;
   font-family: inherit;
@@ -508,7 +508,7 @@
   background: #eff3f2;
 }
 .mg-period-tab.active {
-  background: #00646d;
+  background: #0648D7;
   color: #fff;
 }
 .mg-period-label {
@@ -516,7 +516,7 @@
   align-items: center;
   gap: 9px;
   font-size: 13px;
-  color: #58656b;
+  color: #526175;
 }
 .mg-custom-dates {
   display: flex;
@@ -525,7 +525,7 @@
   gap: 15px;
   padding: 20px;
   background: #fff;
-  border: 1px solid #d9dee0;
+  border: 1px solid #DCE5EF;
   margin: -8px 0 24px;
 }
 .mg-custom-dates .field {
@@ -554,12 +554,12 @@
   gap: 0;
   background: #fff;
   border: 1px solid #cbd4d7;
-  border-top: 3px solid #00646d;
+  border-top: 3px solid #0648D7;
   margin: 0 0 28px;
 }
 .mg-report-stat {
   padding: 24px;
-  border-right: 1px solid #d9dee0;
+  border-right: 1px solid #DCE5EF;
   min-width: 0;
 }
 .mg-report-stat:last-child {
@@ -576,7 +576,7 @@
   min-height: 36px;
 }
 .mg-kpi-icon {
-  color: #00646d;
+  color: #0648D7;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -585,7 +585,7 @@
   display: block;
   font-size: 39px;
   font-weight: 600;
-  color: #202c32;
+  color: #1F2937;
   line-height: 1.15;
   margin-top: 16px;
   letter-spacing: -1px;
@@ -594,12 +594,12 @@
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0;
-  color: #58656b;
+  color: #526175;
 }
 .mg-report-stat > p {
   font-size: 12px;
   line-height: 1.5;
-  color: #58656b;
+  color: #526175;
   margin: 12px 0 0;
 }
 .mg-report-chart-grid {
@@ -613,7 +613,7 @@
 .mg-risk-card,
 .mg-register-card {
   overflow: hidden;
-  border: 1px solid #d9dee0;
+  border: 1px solid #DCE5EF;
   border-radius: 1px;
   background: #fff;
   box-shadow: none;
@@ -633,12 +633,12 @@
   gap: 7px;
   font-size: 12px;
   white-space: nowrap;
-  color: #58656b;
+  color: #526175;
 }
 .mg-chart-key > span {
   width: 8px;
   height: 8px;
-  background: #00646d;
+  background: #0648D7;
 }
 .mg-bar-chart {
   height: 265px;
@@ -653,7 +653,7 @@
   justify-content: space-between;
   padding: 0 0 30px;
   font-size: 11px;
-  color: #58656b;
+  color: #526175;
   flex-shrink: 0;
   transform: translateY(-5px);
   text-align: right;
@@ -707,12 +707,12 @@
   width: 62%;
   max-width: 42px;
   min-width: 2px;
-  background: #00646d;
+  background: #0648D7;
   position: relative;
 }
 .mg-bar:hover,
 .mg-bar:focus-visible {
-  background: #00464e;
+  background: #063AA8;
 }
 .mg-bar-latest {
   background: #ab7428;
@@ -731,7 +731,7 @@
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  color: #58656b;
+  color: #526175;
   white-space: nowrap;
 }
 .mg-bar-tooltip {
@@ -768,7 +768,7 @@
   transform: none;
 }
 .mg-chart-data {
-  border-top: 1px solid #d9dee0;
+  border-top: 1px solid #DCE5EF;
   margin-top: 12px;
 }
 .mg-chart-data > summary {
@@ -779,7 +779,7 @@
   cursor: pointer;
   list-style: none;
   font-size: 12px;
-  color: #00646d;
+  color: #0648D7;
 }
 .mg-chart-data > summary::-webkit-details-marker {
   display: none;
@@ -822,11 +822,11 @@
 .mg-donut-center strong {
   font-size: 33px;
   font-weight: 600;
-  color: #202c32;
+  color: #1F2937;
 }
 .mg-donut-center > span {
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
 }
 .mg-risk-legend {
   width: 100%;
@@ -861,16 +861,16 @@
 .mg-risk-percent {
   display: none;
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
   min-width: 30px;
   text-align: right;
 }
 .mg-risk-footnote {
   padding: 15px 22px;
   margin: 20px 0 0;
-  border-top: 1px solid #d9dee0;
+  border-top: 1px solid #DCE5EF;
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
   text-align: center;
 }
 .mg-register-card .mg-card-heading {
@@ -903,12 +903,12 @@
 }
 .mg-patient-link > span > span {
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
 }
 .mg-patient-link:hover strong {
   text-decoration: underline;
   text-underline-offset: 3px;
-  color: #00646d;
+  color: #0648D7;
 }
 .mg-patient-link .avatar {
   width: 34px;
@@ -921,26 +921,26 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 15px 23px;
-  border-top: 1px solid #d9dee0;
+  border-top: 1px solid #DCE5EF;
   gap: 10px;
 }
 .mg-table-footer > span {
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
 }
 .mg-table-footer .btn {
   font-size: 12px;
-  color: #00646d;
+  color: #0648D7;
 }
 .mg-report-note {
   display: flex;
   gap: 12px;
   margin-top: 24px;
   padding: 20px;
-  border: 1px solid #d9dee0;
+  border: 1px solid #DCE5EF;
   border-left: 3px solid #b37d2d;
   background: #f7f6f1;
-  color: #58656b;
+  color: #526175;
 }
 .mg-report-note > svg {
   flex-shrink: 0;
@@ -966,7 +966,7 @@
 }
 .mg-report-empty > p {
   font-size: 14px;
-  color: #58656b;
+  color: #526175;
 }
 .mg-print-footer {
   display: none;
@@ -1021,7 +1021,7 @@
     border-right: 0;
   }
   .mg-team-stat:nth-child(-n + 2) {
-    border-bottom: 1px solid #d9dee0;
+    border-bottom: 1px solid #DCE5EF;
   }
   .mg-team-filters {
     flex-wrap: wrap;
@@ -1075,7 +1075,7 @@
     border-right: 0;
   }
   .mg-report-stat:nth-child(-n + 2) {
-    border-bottom: 1px solid #d9dee0;
+    border-bottom: 1px solid #DCE5EF;
   }
   .mg-team-footnote {
     flex-wrap: wrap;
@@ -1374,7 +1374,7 @@
 @media print {
   .reports-page {
     font-size: 10px;
-    color: #202c32;
+    color: #1F2937;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -1499,7 +1499,7 @@
   .reports-page .mg-print-footer {
     display: block;
     font-size: 9px;
-    color: #58656b;
+    color: #526175;
     margin-top: 20px;
   }
   @page {

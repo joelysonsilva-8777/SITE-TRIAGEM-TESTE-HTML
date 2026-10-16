@@ -94,7 +94,7 @@
         }),
     );
     container.querySelector("#export-patients").onclick = () => {
-      A.download("clara-pacientes.csv", Store.exportCSV(getFiltered()));
+      A.download("medfast-pacientes.csv", Store.exportCSV(getFiltered()));
       A.toast("Lista filtrada exportada em CSV.");
     };
     render();

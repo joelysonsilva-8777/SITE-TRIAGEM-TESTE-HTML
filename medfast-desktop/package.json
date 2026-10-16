@@ -1,0 +1,49 @@
+{
+  "name": "medfast-desktop",
+  "private": true,
+  "version": "1.1.0",
+  "description": "MedFast Desktop — atendimento offline com sincronização Firebase",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "npm run build && node scripts/run-electron.mjs",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint --deny-warnings",
+    "typecheck": "tsc -b --pretty false",
+    "test": "node --test tests/*.test.mjs",
+    "test:firebase": "node scripts/firebase-tests.mjs",
+    "test:desktop": "npm run build && playwright test",
+    "dist:win": "npm run build && node scripts/package.mjs && node scripts/check-package.mjs",
+    "verify:package": "node scripts/check-package.mjs",
+    "firebase:deploy": "firebase deploy --only firestore:rules,firestore:indexes --project triagem-base",
+    "firebase:deploy:storage": "firebase deploy --only storage --project triagem-base"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "^1.51.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router": "^8.4.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "electron": "^44.8.0",
+    "electron-builder": "^26.15.3",
+    "firebase": "^13.0.0",
+    "firebase-tools": "^15.34.0",
+    "oxlint": "^1.81.0",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "main": "electron/main.mjs",
+  "author": "MedFast"
+}

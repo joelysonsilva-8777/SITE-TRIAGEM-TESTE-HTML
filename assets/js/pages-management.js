@@ -478,7 +478,7 @@
         <section class="card mg-risk-card"><div class="mg-card-heading"><div><h2>Perfil de prioridade</h2><p>Distribuição das entradas por classificação</p></div></div>${riskChart(list)}<p class="mg-risk-footnote">Classificações registradas pela equipe na triagem.</p></section></div>
         <section class="card mg-register-card"><div class="mg-card-heading"><div><h2>Registros do período</h2><p>Abra a ficha de um paciente para consultar o histórico completo.</p></div><span class="mg-directory-count">${plural(list.length, "registro", "registros")}</span></div><div class="table-wrap"><table class="data-table mg-report-table"><thead><tr><th>Paciente</th><th>Entrada</th><th>Classificação</th><th>Situação</th><th>Espera</th><th><span class="mg-sr-only">Abrir ficha</span></th></tr></thead><tbody>${shown.length ? shown.map((p) => `<tr><td><button class="mg-patient-link" data-report-patient="${esc(p.id)}">${A.patientAvatar(p)}<span><strong>${esc(p.name)}</strong><span>${esc(p.code)}</span></span></button></td><td class="mg-nowrap">${dateTime(p.arrivalAt)}</td><td>${A.riskBadge(p.risk)}</td><td>${A.statusBadge(p.status)}</td><td class="mg-nowrap">${minutesBetween(p.triagedAt, p.startedAt) === null ? "—" : `${Math.round(minutesBetween(p.triagedAt, p.startedAt))} min`}</td><td><button class="icon-btn" data-report-patient="${esc(p.id)}" aria-label="Abrir ficha de ${esc(p.name)}">${icon("arrow-up-right", 17)}</button></td></tr>`).join("") : '<tr><td colspan="6"><div class="mg-report-empty"><strong>Sem registros neste período</strong><p>Selecione outra data para consultar os atendimentos.</p></div></td></tr>'}</tbody></table></div><div class="mg-table-footer"><span>Mostrando ${shown.length} de ${list.length} registros</span>${list.length > 6 ? `<button class="btn btn-ghost btn-sm" id="mg-toggle-records">${state.showAll ? "Mostrar menos" : "Ver todos os registros"} ${icon(state.showAll ? "chevron-up" : "arrow-right", 16)}</button>` : ""}</div></section>
         <div class="mg-report-note">${icon("info", 17)}<p><strong>Sobre estes indicadores</strong><span>O período considera a data de entrada. As médias incluem apenas registros com os dois horários preenchidos. Dados fictícios para demonstração; os indicadores não representam metas clínicas.</span></p></div>
-        <div class="mg-print-footer">Clara · Relatório demonstrativo · ${esc(periodLabel)} · Gerado em ${new Date().toLocaleString("pt-BR")}</div>
+        <div class="mg-print-footer">MedFast · Relatório demonstrativo · ${esc(periodLabel)} · Gerado em ${new Date().toLocaleString("pt-BR")}</div>
       </div>`;
       bind(list);
     }
@@ -536,7 +536,7 @@
           const url = URL.createObjectURL(blob);
           const link = document.createElement("a");
           link.href = url;
-          link.download = `clara-atendimentos-${state.from}-a-${state.to}.csv`;
+          link.download = `medfast-atendimentos-${state.from}-a-${state.to}.csv`;
           document.body.appendChild(link);
           link.click();
           link.remove();

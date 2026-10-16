@@ -1,30 +1,16 @@
-@font-face {
-  font-family: "Source Sans 3";
-  src: url("../fonts/source-sans-3.woff2") format("woff2");
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Source Serif 4";
-  src: url("../fonts/source-serif-4.woff2") format("woff2");
-  font-weight: 400 600;
-  font-style: normal;
-  font-display: swap;
-}
 :root {
-  --green: #00646d;
-  --green-dark: #00464e;
-  --green-light: #edf2f2;
-  --ink: #202c32;
-  --muted: #58656b;
-  --border: #d9dee0;
+  --green: #0648D7;
+  --green-dark: #063AA8;
+  --green-light: #E8FAFF;
+  --ink: #1F2937;
+  --muted: #526175;
+  --border: #DCE5EF;
   --surface: #fff;
-  --bg: #f5f5f2;
-  --accent: #e3a038;
+  --bg: #F3F6F9;
+  --accent: #19C7C4;
   --radius: 2px;
   --shadow: none;
-  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-family: "Poppins", "Segoe UI", sans-serif;
   font-size: 15px;
   color: var(--ink);
   font-synthesis: none;
@@ -133,7 +119,7 @@ svg {
 }
 ::selection {
   background: #f6d397;
-  color: #202c32;
+  color: #1F2937;
 }
 a:focus-visible,
 button:focus-visible,
@@ -201,7 +187,7 @@ summary:focus-visible {
   gap: 15px;
 }
 .utility-slash {
-  color: #e3a038;
+  color: #19C7C4;
   margin: 0 11px;
 }
 .utility-demo {
@@ -328,10 +314,10 @@ summary:focus-visible {
   padding-left: 21px;
 }
 .nav-item:hover {
-  background: #00545d;
+  background: #063AA8;
 }
 .nav-item.active {
-  background: #00535b;
+  background: #063AA8;
   color: #fff;
 }
 .nav-item.active:after {
@@ -345,7 +331,7 @@ summary:focus-visible {
 }
 .nav-count {
   background: #fff;
-  color: #00464e;
+  color: #063AA8;
   min-width: 21px;
   padding: 0 5px;
   font-size: 11px;
@@ -368,7 +354,7 @@ summary:focus-visible {
 }
 .global-search-trigger kbd {
   font:
-    10px "Source Sans 3",
+    10px "Poppins",
     sans-serif;
   border: 1px solid #90b5b9;
   color: #fff;
@@ -465,7 +451,7 @@ summary:focus-visible {
   font-size: 11px;
   letter-spacing: 1.4px;
   font-weight: 600;
-  color: #00646d;
+  color: #0648D7;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -527,7 +513,7 @@ summary:focus-visible {
 }
 .btn-amber {
   background: var(--accent);
-  color: #202c32;
+  color: #1F2937;
   border-color: var(--accent);
 }
 .btn-amber:hover {
@@ -652,7 +638,7 @@ body[data-page="dashboard"] #main-content {
   background: #d4922b;
 }
 .hero-copy h1 {
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 51px;
   line-height: 1.12;
@@ -774,7 +760,7 @@ body[data-page="dashboard"] #main-content {
 .home-tool-count {
   font-size: 12px;
   white-space: nowrap;
-  color: #00646d;
+  color: #0648D7;
   border-bottom: 1px solid #afc5c8;
   padding-bottom: 3px;
 }
@@ -810,7 +796,7 @@ body[data-page="dashboard"] #main-content {
   display: inline-block;
   width: 5px;
   height: 5px;
-  background: #00646d;
+  background: #0648D7;
   border-radius: 50%;
 }
 .stat-grid {
@@ -1061,7 +1047,7 @@ body[data-page="dashboard"] #main-content {
   display: inline-block;
   width: 7px;
   height: 7px;
-  background: #00646d;
+  background: #0648D7;
   margin-right: 6px;
 }
 .legend-dot.light {
@@ -1091,7 +1077,7 @@ body[data-page="dashboard"] #main-content {
 }
 .chart-summary strong {
   font-weight: 500;
-  color: #00646d;
+  color: #0648D7;
 }
 .chart-data-details {
   padding: 0 24px 17px;
@@ -1099,7 +1085,7 @@ body[data-page="dashboard"] #main-content {
 }
 .chart-data-details summary {
   cursor: pointer;
-  color: #00646d;
+  color: #0648D7;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1315,7 +1301,7 @@ body[data-page="dashboard"] #main-content {
   font-size: 12px;
 }
 .status-attending {
-  color: #00646d;
+  color: #0648D7;
 }
 .status-finished {
   color: #456454;
@@ -1427,8 +1413,8 @@ body[data-page="dashboard"] #main-content {
   min-height: 45px;
 }
 .tab.active {
-  color: #00555e;
-  border-bottom-color: #00646d;
+  color: #0648D7;
+  border-bottom-color: #0648D7;
   font-weight: 600;
 }
 .tab-count {
@@ -1459,7 +1445,7 @@ body[data-page="dashboard"] #main-content {
   gap: 11px;
   padding: 16px 19px;
   border: 1px solid #ccd5d7;
-  border-left: 3px solid #00646d;
+  border-left: 3px solid #0648D7;
   background: #fff;
   color: #4f656d;
   font-size: 13px;
@@ -1471,7 +1457,7 @@ body[data-page="dashboard"] #main-content {
   margin-top: 2px;
 }
 .notice-info {
-  border-left-color: #00646d;
+  border-left-color: #0648D7;
   background: #f2f5f5;
 }
 .notice-warning {
@@ -1523,7 +1509,7 @@ body[data-page="dashboard"] #main-content {
   color: #60747b;
 }
 .risk-summary-card.selected {
-  outline: 2px solid #00646d;
+  outline: 2px solid #0648D7;
   outline-offset: 2px;
 }
 .queue-page .notice {
@@ -1707,7 +1693,7 @@ body[data-page="dashboard"] #main-content {
   font-size: 23px;
   font-weight: 600;
   margin-top: 7px;
-  color: #00646d;
+  color: #0648D7;
 }
 .timeline {
   list-style: none;
@@ -1738,7 +1724,7 @@ body[data-page="dashboard"] #main-content {
   flex-shrink: 0;
   margin-top: 6px;
   background: #fff;
-  border: 2px solid #00646d;
+  border: 2px solid #0648D7;
 }
 .timeline p {
   color: #3e5c67;
@@ -1757,7 +1743,7 @@ body[data-page="dashboard"] #main-content {
   border-bottom: 1px solid var(--border);
 }
 .unit-card > svg {
-  color: #00646d;
+  color: #0648D7;
   margin-bottom: 15px;
 }
 .unit-card h3 {
@@ -1800,7 +1786,7 @@ body[data-page="dashboard"] #main-content {
   place-items: center;
   width: 26px;
   height: 27px;
-  background: #00646d;
+  background: #0648D7;
   color: #fff;
   font-size: 12px;
 }
@@ -1882,7 +1868,7 @@ body[data-page="dashboard"] #main-content {
   pointer-events: auto;
   background: #fff;
   border: 1px solid #8aa9b2;
-  border-left: 4px solid #00646d;
+  border-left: 4px solid #0648D7;
   box-shadow: 0 4px 22px #122d3926;
   color: #254d5b;
   padding: 14px 14px 14px 19px;
@@ -2140,10 +2126,10 @@ body[data-page="dashboard"] #main-content {
     top: 49px;
     left: 0;
     right: 0;
-    background: #00565e;
+    background: #063AA8;
     z-index: 45;
     padding: 8px 0;
-    border-bottom: 3px solid #e3a038;
+    border-bottom: 3px solid #19C7C4;
     box-shadow: 0 10px 25px #263a4430;
   }
   .menu-open .primary-navigation {

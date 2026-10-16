@@ -1,0 +1,52 @@
+/* MedFast identity. Clinical risk colors are defined separately. */
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-SemiBold.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('../fonts/Poppins-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+:root { --primary: #0648D7; --teal: #19C7C4; --sky: #E8FAFF; --green: var(--primary); --green-dark: #063AA8; --green-light: var(--sky); --ink: #1F2937; --muted: #526175; --bg: #F3F6F9; --border: #DCE5EF; --accent: var(--teal); --radius: 14px; font-family: 'Poppins', sans-serif; font-size: 14px; }
+body { font-family: 'Poppins', sans-serif; }
+.brand { gap: 9px; flex-shrink: 0; }
+.brand-mark, .brand-mark img, .brand-mark svg { width: 66px; height: 60px; display: block; }
+.brand-name { font-family: 'Poppins', sans-serif; color: var(--primary); font-size: 34px; line-height: 1.2; font-weight: 600; letter-spacing: -1.5px; white-space: nowrap; }
+.brand-fast { color: var(--teal); }
+.brand-wordmark { display: block; width: 164px; height: 44px; font-family: 'Poppins', sans-serif; font-size: 34px; font-weight: 600; letter-spacing: -1.5px; }
+.brand-caption { font-family: 'Poppins', sans-serif; font-size: 8px; font-weight: 500; letter-spacing: 1.3px; margin-top: 4px; color: var(--muted); }
+.utility-bar { background: #063AA8; }
+.utility-slash, .hero-kicker:before, .section-eyebrow:before, .eyebrow:before { color: var(--teal); }
+.hero-kicker:before, .section-eyebrow:before, .eyebrow:before { background: var(--teal); }
+.main-nav, .nav-bar { background: var(--primary); }
+.profile-symbol { color: var(--primary); }
+.hero, .home-hero { border-radius: 20px; overflow: hidden; background: white; }
+.main-nav a:hover, .main-nav a.active, .nav-links a:hover, .nav-links a.active { background: #063AA8; }
+.nav-item:hover, .nav-item.active { background: #063AA8; }
+.hero-photo figcaption { border-left-color: var(--teal); }
+::selection { background: #BBF0EF; color: #1F2937; }
+:focus-visible { outline-color: #0648D7; }
+.hero-copy h1 { font-family: 'Poppins', sans-serif; font-size: clamp(35px, 3.4vw, 48px); font-weight: 500; line-height: 1.2; letter-spacing: -1.6px; color: var(--ink); }
+.hero-copy h1 em { font-family: inherit; font-style: normal; font-weight: 600; color: var(--primary); }
+.hero-copy > p { color: var(--muted); }
+.hero-photo { position: relative; }
+.hero-photo-caption, .hero-photo-note { border-left-color: var(--teal); }
+.btn { border-radius: 9px; font-weight: 500; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-accent, .btn-amber { background: var(--teal); border-color: var(--teal); color: #143443; }
+.btn-accent:hover, .btn-amber:hover { background: #15B7B5; color: #143443; }
+.card, .rw-care-card, .rw-team-card { border-radius: var(--radius); }
+.metric { border-radius: 0; }
+.metrics { border-radius: var(--radius); overflow: hidden; }
+input, select, textarea, .rw-search { border-radius: 8px; }
+.hospital-footer { background: #E8FAFF; border-top: 1px solid #C7DFEE; color: var(--ink); }
+.hospital-footer p, .hospital-footer button, .hospital-footer strong { color: var(--ink); }
+.hospital-footer .footer-bottom, .hospital-footer .footer-help > span { color: var(--muted); }
+.footer-brand { gap: 9px; }
+.footer-brand .brand-mark { width: 55px; height: 50px; }
+.footer-brand .brand-mark img, .footer-brand .brand-mark svg { width: 55px; height: 50px; }
+.footer-brand .brand-name { font-size: 28px; color: var(--primary); }
+.footer-brand .brand-name .brand-fast { color: #008E91; }
+.hospital-footer .footer-brand .brand-caption { font-size: 8px; color: var(--muted); }
+.footer-brand .brand-wordmark { width: 148px; height: 40px; }
+.home-closing { border-radius: 14px; background: #E8FAFF; }
+.desktop-status { background: #E8FAFF; color: #063AA8; }
+@media (max-width: 650px) { .brand-mark, .brand-mark img, .brand-mark svg { width: 49px; height: 46px; } .brand-name { font-size: 28px; } .brand-caption { font-size: 7px; letter-spacing: 1px; } .hero-copy h1 { font-size: 36px; } }
+@media print { .brand-name { font-size: 26px; } .hospital-footer { display: none; } }
+@media (max-width: 650px) { .brand-wordmark { width: 138px; height: 37px; } }

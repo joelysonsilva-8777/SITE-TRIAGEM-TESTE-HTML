@@ -369,7 +369,7 @@
       "Miguel",
       "Teresa",
       "Gabriel",
-      "Clara",
+      "MedFast",
       "Francisco",
       "Laura",
       "Eduardo",
@@ -566,7 +566,7 @@
       staff: staff,
       events: events.sort((a, b) => Date.parse(b.at) - Date.parse(a.at)),
       settings: {
-        hospital: "Hospital Santa Clara",
+        hospital: "Unidade MedFast",
         unit: "Pronto atendimento",
         userName: "Camila Martins",
       },

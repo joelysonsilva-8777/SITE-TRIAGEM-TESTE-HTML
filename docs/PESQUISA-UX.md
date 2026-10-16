@@ -1,6 +1,6 @@
-# Clara — pesquisa e decisões de UX
+# MedFast — pesquisa e decisões de UX
 
-A Clara explora como uma interface pode tornar visíveis a identificação do paciente, a etapa do atendimento e a próxima ação. O estudo foi documental, com fontes primárias de enfermagem, organização de atendimento e acessibilidade. Não foram realizados entrevistas, observação em hospitais, estudos com pacientes ou validação clínica.
+A MedFast explora como uma interface pode tornar visíveis a identificação do paciente, a etapa do atendimento e a próxima ação. O estudo foi documental, com fontes primárias de enfermagem, organização de atendimento e acessibilidade. Não foram realizados entrevistas, observação em hospitais, estudos com pacientes ou validação clínica.
 
 ## Referências e aplicação
 
@@ -14,7 +14,7 @@ O manual do e-SUS APS apresenta identificação do cidadão, escuta inicial, lis
 
 ### Acessibilidade
 
-As WCAG 2.2 orientaram o uso de controles HTML semânticos, rótulos de formulário, navegação por teclado, foco perceptível e mensagens de estado. Na Clara, botões de ícone recebem nome acessível, há um atalho para o conteúdo principal e as janelas usam o elemento `dialog`. Essas escolhas precisam ser verificadas em conjunto com teclado, zoom e tecnologias assistivas; a referência às diretrizes **não constitui declaração de conformidade integral com WCAG**. [Fonte: W3C, WCAG 2.2](https://www.w3.org/TR/WCAG22/).
+As WCAG 2.2 orientaram o uso de controles HTML semânticos, rótulos de formulário, navegação por teclado, foco perceptível e mensagens de estado. Na MedFast, botões de ícone recebem nome acessível, há um atalho para o conteúdo principal e as janelas usam o elemento `dialog`. Essas escolhas precisam ser verificadas em conjunto com teclado, zoom e tecnologias assistivas; a referência às diretrizes **não constitui declaração de conformidade integral com WCAG**. [Fonte: W3C, WCAG 2.2](https://www.w3.org/TR/WCAG22/).
 
 As categorias de risco combinam cores com nomes legíveis. Situações como “Em atendimento” e “Finalizado” também recebem texto. A intenção é que prioridade e andamento permaneçam compreensíveis sem distinguir cores. [Fonte: W3C, Understanding Use of Color, critério 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html).
 
@@ -38,11 +38,11 @@ Os resultados acima são objetivos de projeto, não ganhos de produtividade medi
 
 As referências visuais de sites hospitalares orientaram o cabeçalho com identificação da unidade, a faixa horizontal de navegação e o uso de fotografias. A composição foi desenvolvida para as tarefas desta demonstração: uma abertura editorial na visão geral, listas e tabelas para consulta, um formulário dividido em etapas na triagem e registros de atendimento com ações próximas aos dados do paciente.
 
-A paleta combina **petróleo `#00646d`**, branco, fundos neutros e detalhes em **âmbar**. Os componentes têm cantos de **0 a 2 px**, divisórias retas e contornos visíveis. A cor institucional aparece na navegação, nos títulos de seção e nas ações; as classificações de risco mantêm nomes, posição e contexto próprios. O âmbar aparece como detalhe de identidade e destaque de navegação, sem representar uma decisão clínica.
+A paleta segue a [identidade MedFast](IDENTIDADE-MEDFAST.md): **azul `#0648D7`**, **verde-água `#19C7C4`**, branco e fundos claros. Os cartões têm cantos arredondados, divisórias e contornos visíveis. O azul aparece na navegação, nos títulos de seção e nas ações; o verde-água destaca a marca e chamadas principais. As classificações clínicas mantêm suas próprias cores, nomes, posição e contexto.
 
-A **Source Sans 3** é usada nos textos, formulários, tabelas e controles. A **Source Serif 4** aparece nas chamadas editoriais. Ambas são carregadas de arquivos locais, com as licenças [Source Sans 3 — SIL OFL](../assets/fonts/sourcesans3-OFL.txt) e [Source Serif 4 — SIL OFL](../assets/fonts/sourceserif4-OFL.txt) incluídas no projeto. A hierarquia usa tamanho, peso e espaçamento para distinguir nomes, dados de apoio e ações.
+A **Poppins** é usada nos textos, formulários, tabelas, controles e títulos, com pesos Regular, Medium, SemiBold e Bold. Os arquivos são locais e incluem a [licença SIL OFL](../assets/fonts/poppins-OFL.txt). A hierarquia usa tamanho, peso e espaçamento para distinguir nomes, dados de apoio e ações.
 
-As fotografias de banco mostram pessoas reais em cenas de atendimento e retratos profissionais. São recursos ilustrativos de uma instituição e de uma equipe fictícias; não identificam as pessoas dos registros e não indicam vínculo ou endosso dos modelos. Os arquivos são servidos localmente e seus créditos e licenças estão em [Fotografias do Clara](FOTOGRAFIAS.md).
+As fotografias de banco mostram pessoas reais em cenas de atendimento e retratos profissionais. São recursos ilustrativos de uma instituição e de uma equipe fictícias; não identificam as pessoas dos registros e não indicam vínculo ou endosso dos modelos. Os arquivos são servidos localmente e seus créditos e licenças estão em [Fotografias do MedFast](FOTOGRAFIAS.md).
 
 A intenção de uma apresentação mais humana também orientou os textos: instruções próximas da tarefa, nomes dos pacientes em destaque, informação sobre a próxima etapa e estados vazios que indicam uma ação disponível. Essa direção é uma escolha de projeto, sem alegação de efeito clínico ou ganho de usabilidade medido. Em telas menores, a navegação horizontal se recolhe em um menu; formulários, filtros e registros se reorganizam, e tabelas mantêm rolagem na própria área quando necessário.
 

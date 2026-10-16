@@ -1,0 +1,112 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function member(unit) { return get(/databases/$(database)/documents/units/$(unit)/members/$(request.auth.uid)).data; }
+    function reader(unit) { return signedIn() && member(unit).active == true && member(unit).role in ['admin', 'editor', 'viewer']; }
+    function writer(unit) { return reader(unit) && member(unit).role in ['admin', 'editor']; }
+    function admin(unit) { return reader(unit) && member(unit).role == 'admin'; }
+    function text(value, max) { return value is string && value.size() <= max; }
+    function identifier(value) { return value is string && value.matches('^[a-zA-Z0-9_-]{1,160}$'); }
+    function optionalDate(value) { return value == null || text(value, 40); }
+    function optionalNumber(value, min, max) { return value == null || (value is number && value >= min && value <= max); }
+    function vitals(v) {
+      return v is map && v.keys().hasAll(['systolic','diastolic','heartRate','temperature','spo2','respiratoryRate','pain'])
+        && v.keys().hasOnly(['systolic','diastolic','heartRate','temperature','spo2','respiratoryRate','pain'])
+        && optionalNumber(v.systolic,0,350) && optionalNumber(v.diastolic,0,250)
+        && optionalNumber(v.heartRate,0,300) && optionalNumber(v.temperature,20,50)
+        && optionalNumber(v.spo2,0,100) && optionalNumber(v.respiratoryRate,0,120) && optionalNumber(v.pain,0,10);
+    }
+    function patient(p, id) {
+      return p is map && p.keys().hasAll(['id','code','name','birthDate','sex','phone','complaint','allergies','risk','status','arrivalAt','triagedAt','startedAt','finishedAt','professional','room','notes','vitals','history'])
+        && p.keys().hasOnly(['id','code','name','birthDate','sex','phone','complaint','allergies','risk','status','arrivalAt','triagedAt','startedAt','finishedAt','professional','room','notes','outcome','vitals','history'])
+        && p.id == id && text(p.code,100) && text(p.name,150) && p.name.size() >= 3
+        && text(p.birthDate,10) && text(p.sex,30) && text(p.phone,40)
+        && text(p.complaint,2000) && text(p.allergies,1000) && text(p.notes,6000)
+        && text(p.professional,150) && text(p.room,100) && text(p.arrivalAt,40)
+        && optionalDate(p.triagedAt) && optionalDate(p.startedAt) && optionalDate(p.finishedAt)
+        && p.status in ['triage','waiting','attending','finished']
+        && (p.risk == null || p.risk in ['red','orange','yellow','green','blue'])
+        && (p.status == 'triage' || (p.risk != null && p.triagedAt != null))
+        && (!(p.status in ['attending','finished']) || p.startedAt != null)
+        && (p.status != 'finished' || (p.finishedAt != null && text(p.get('outcome',''),100)))
+        && vitals(p.vitals) && p.history is list && p.history.size() <= 2000;
+    }
+    function staff(p, id) {
+      return p is map && p.keys().hasAll(['id','name','role','department','status','initials','color','shift'])
+        && p.keys().hasOnly(['id','name','role','department','status','initials','color','shift'])
+        && p.id == id && text(p.name,150) && p.name.size() >= 2 && text(p.role,150) && text(p.department,150)
+        && text(p.shift,150) && text(p.initials,10) && text(p.color,30) && p.status in ['available','busy','break'];
+    }
+    function event(p, id) {
+      return p is map && p.keys().hasAll(['id','patientId','at','text','type']) && p.keys().hasOnly(['id','patientId','at','text','type'])
+        && p.id == id && identifier(p.patientId) && text(p.at,40) && text(p.text,7000) && text(p.type,30);
+    }
+    function validPayload(d, unit) {
+      return (d.kind == 'patients' && patient(d.payload,d.id))
+        || (d.kind == 'staff' && staff(d.payload,d.id))
+        || (d.kind == 'events' && event(d.payload,d.id))
+        || (d.kind == 'settings' && admin(unit) && d.id == 'unit' && d.payload.keys().hasOnly(['hospital','unit'])
+          && text(d.payload.hospital,150) && d.payload.hospital.size() > 0 && text(d.payload.unit,150) && d.payload.unit.size() > 0);
+    }
+    function envelope(d, key, unit) {
+      return d.keys().hasAll(['schema','kind','id','payload','version','updatedBy','updatedAt','deviceId','opId'])
+        && d.keys().hasOnly(['schema','kind','id','payload','version','updatedBy','updatedAt','deviceId','opId'])
+        && d.schema == 1 && d.kind in ['patients','staff','events','settings'] && identifier(d.id)
+        && key == d.kind + '_' + d.id && d.version is int && d.version >= 1
+        && d.updatedBy == request.auth.uid && d.updatedAt == request.time && identifier(d.deviceId) && identifier(d.opId)
+        && validPayload(d,unit);
+    }
+    function linkedOperation(unit, key, d) {
+      let op = getAfter(/databases/$(database)/documents/units/$(unit)/operations/$(d.opId)).data;
+      return op.key == key && op.version == d.version && op.uid == request.auth.uid && op.deviceId == d.deviceId && op.at == request.time;
+    }
+    function transition(before, after) {
+      return before.status == after.status
+        || (before.status == 'triage' && after.status == 'waiting')
+        || (before.status == 'waiting' && after.status == 'attending')
+        || (before.status == 'attending' && after.status == 'finished')
+        || (before.status == 'triage' && after.status == 'attending' && after.triagedAt != null && after.startedAt != null)
+        // Several valid steps can be completed while offline and uploaded together.
+        || (before.status in ['triage','waiting'] && after.status == 'finished' && after.triagedAt != null && after.startedAt != null && after.finishedAt != null);
+    }
+    match /units/{unit} {
+      allow read: if reader(unit);
+      allow write: if false;
+      match /members/{uid} {
+        allow get: if signedIn() && (request.auth.uid == uid || admin(unit));
+        allow list: if admin(unit);
+        allow create, update: if admin(unit) && request.resource.data.keys().hasOnly(['role','active','email'])
+          && request.resource.data.role in ['admin','editor','viewer'] && request.resource.data.active is bool
+          && text(request.resource.data.email,254);
+        allow delete: if false;
+      }
+      match /records/{key} {
+        allow read: if reader(unit);
+        allow create: if writer(unit) && envelope(request.resource.data,key,unit) && request.resource.data.version == 1 && linkedOperation(unit,key,request.resource.data);
+        allow update: if writer(unit) && envelope(request.resource.data,key,unit)
+          && request.resource.data.kind == resource.data.kind && request.resource.data.id == resource.data.id
+          && request.resource.data.version == resource.data.version + 1 && resource.data.kind != 'events'
+          && (resource.data.kind != 'patients' || (transition(resource.data.payload,request.resource.data.payload)
+            && request.resource.data.payload.arrivalAt == resource.data.payload.arrivalAt && request.resource.data.payload.code == resource.data.payload.code))
+          && linkedOperation(unit,key,request.resource.data);
+        allow delete: if false;
+      }
+      match /operations/{opId} {
+        allow read: if reader(unit);
+        allow create: if writer(unit) && identifier(opId)
+          && request.resource.data.keys().hasAll(['key','kind','id','baseVersion','version','uid','deviceId','at'])
+          && request.resource.data.keys().hasOnly(['key','kind','id','baseVersion','version','uid','deviceId','at'])
+          && identifier(request.resource.data.id) && request.resource.data.kind in ['patients','staff','events','settings']
+          && request.resource.data.key == request.resource.data.kind + '_' + request.resource.data.id
+          && request.resource.data.uid == request.auth.uid && identifier(request.resource.data.deviceId)
+          && request.resource.data.baseVersion is int && request.resource.data.baseVersion >= 0
+          && request.resource.data.version == request.resource.data.baseVersion + 1 && request.resource.data.at == request.time
+          && getAfter(/databases/$(database)/documents/units/$(unit)/records/$(request.resource.data.key)).data.opId == opId
+          && getAfter(/databases/$(database)/documents/units/$(unit)/records/$(request.resource.data.key)).data.version == request.resource.data.version;
+        allow update, delete: if false;
+      }
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

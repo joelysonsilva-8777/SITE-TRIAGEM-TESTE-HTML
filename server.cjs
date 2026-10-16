@@ -15,6 +15,7 @@ const types = {
   ".jpeg": "image/jpeg",
   ".png": "image/png",
   ".woff2": "font/woff2",
+  ".ttf": "font/ttf",
   ".json": "application/json; charset=utf-8",
 };
 http
@@ -56,6 +57,6 @@ http
   })
   .listen(Number(process.env.PORT) || 4173, "127.0.0.1", () =>
     console.log(
-      "Clara disponível em http://localhost:" + (process.env.PORT || 4173),
+      "MedFast disponível em http://localhost:" + (process.env.PORT || 4173),
     ),
   );

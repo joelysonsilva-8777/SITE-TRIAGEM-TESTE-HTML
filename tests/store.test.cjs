@@ -210,7 +210,7 @@ test("staff updates, notes and settings save; reset restores demonstration", () 
   );
   assert.equal(store.get().events[0].id, event.id);
   store.reset();
-  assert.equal(store.get().settings.hospital, "Hospital Santa Clara");
+  assert.equal(store.get().settings.hospital, "Unidade MedFast");
   assert.equal(store.staff()[0].status, "available");
 });
 

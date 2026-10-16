@@ -1,6 +1,6 @@
-# Fotografias do Clara
+# Fotografias do MedFast
 
-As fotografias são ilustrativas e vêm do banco Pexels. Os profissionais, os pacientes, os nomes, as funções e a instituição apresentados no Clara são fictícios. As pessoas fotografadas não são identificadas pelos nomes dos registros de demonstração e não têm vínculo ou endosso associado ao projeto.
+As fotografias são ilustrativas e vêm do banco Pexels. Os profissionais, os pacientes, os nomes, as funções e a instituição apresentados no MedFast são fictícios. As pessoas fotografadas não são identificadas pelos nomes dos registros de demonstração e não têm vínculo ou endosso associado ao projeto.
 
 Os nomes dos arquivos `staff-*.jpg` servem apenas para relacionar uma imagem ilustrativa a um registro fictício na interface.
 

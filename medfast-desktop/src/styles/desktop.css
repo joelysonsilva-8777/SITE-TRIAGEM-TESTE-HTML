@@ -1,0 +1,142 @@
+.desktop-status {
+  background: #E8FAFF;
+  border-bottom: 1px solid #C7DFEE;
+  font-size: 12px;
+  color: #0648D7;
+}
+.desktop-status > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 10px;
+  gap: 18px;
+}
+.desktop-status span,
+.desktop-status a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.desktop-status a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.desktop-status.needs-attention {
+  background: #fff3db;
+  color: #76500c;
+  border-color: #dfc69d;
+}
+.desktop-sync-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin: 28px 0;
+}
+.desktop-account {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--green);
+  margin-bottom: 25px;
+}
+.desktop-account p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.desktop-restore {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  margin-top: 25px;
+}
+.desktop-restore summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.desktop-restore > p {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.desktop-restore > .btn {
+  margin-top: 20px;
+}
+.desktop-conflict {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--border);
+}
+.desktop-conflict-versions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 20px 0;
+}
+.desktop-conflict-versions > div {
+  min-width: 0;
+}
+.desktop-version {
+  max-height: 420px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  margin-top: 12px;
+}
+.desktop-version dl > div {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.desktop-version dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.desktop-version dd {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.desktop-version .changed {
+  background: #fff3db;
+}
+.desktop-version details {
+  padding: 14px;
+}
+.desktop-version details p {
+  margin-top: 12px;
+  white-space: pre-wrap;
+}
+.desktop-conflict pre {
+  max-height: 260px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #f3f5f3;
+  padding: 15px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+}
+.desktop-staff-placeholder {
+  background: #e6efeb;
+  color: #0648D7;
+  font-size: 36px;
+  display: grid !important;
+  place-content: center;
+  font-weight: 600;
+}
+.desktop-staff-placeholder::before {
+  content: '';
+}
+.rw-team-photo .desktop-staff-placeholder {
+  font-size: 70px;
+}
+@media (max-width: 980px) {
+  .desktop-sync-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media print {
+  .desktop-status {
+    display: none;
+  }
+}

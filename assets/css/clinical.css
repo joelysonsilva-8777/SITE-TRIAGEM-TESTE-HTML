@@ -50,7 +50,7 @@
   width: 7px;
   height: 7px;
   border-radius: 2px;
-  background: #00646d;
+  background: #0648D7;
   display: inline-block;
   flex-shrink: 0;
 }
@@ -86,7 +86,7 @@
 }
 .clinical-queue-search:focus-within,
 .clinical-care-search:focus-within {
-  outline: 2px solid #00646d;
+  outline: 2px solid #0648D7;
   outline-offset: 2px;
 }
 .clinical-queue-list {
@@ -121,7 +121,7 @@
 }
 .clinical-queue-person.is-selected {
   background: #f1f3f2;
-  border-color: #00646d;
+  border-color: #0648D7;
   box-shadow: inset 3px 0 var(--green);
 }
 .clinical-queue-person > .avatar {
@@ -237,7 +237,7 @@
   gap: 9px;
   align-items: center;
   padding: 12px 0 18px;
-  color: #58656b;
+  color: #526175;
   font-family: inherit;
   cursor: pointer;
 }
@@ -245,7 +245,7 @@
   width: 25px;
   height: 25px;
   background: #f3f4f2;
-  border: 1px solid #d9dee0;
+  border: 1px solid #DCE5EF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -292,7 +292,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #00646d;
+  background: #0648D7;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -355,7 +355,7 @@
 .clinical-modal-patient ~ form .field select:focus,
 .clinical-modal-patient ~ form .field textarea:focus {
   outline: none;
-  border-color: #00646d;
+  border-color: #0648D7;
   box-shadow: 0 0 0 3px #e8eeee;
 }
 .clinical-field-help {
@@ -399,7 +399,7 @@
 }
 .clinical-step-progress {
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
 }
 .clinical-form-section {
   margin-bottom: 28px;
@@ -445,7 +445,7 @@
   right: 10px;
   top: 15px;
   font-size: 12px;
-  color: #58656b;
+  color: #526175;
   pointer-events: none;
 }
 .clinical-input-unit input::placeholder {
@@ -463,8 +463,8 @@
   margin: 0;
 }
 .clinical-risk-option {
-  --risk-color: #58656b;
-  --risk-bg: #f5f5f2;
+  --risk-color: #526175;
+  --risk-bg: #F3F6F9;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -663,7 +663,7 @@
   margin: 2px 0 0;
 }
 .clinical-destination {
-  border: 1px solid #d9dee0;
+  border: 1px solid #DCE5EF;
   border-radius: 2px;
   padding: 16px;
   display: flex;
@@ -833,7 +833,7 @@
   width: 68px;
   height: 68px;
   border-radius: 2px;
-  background: #00646d;
+  background: #0648D7;
   color: #fff;
   margin-bottom: 25px;
 }
@@ -869,7 +869,7 @@
   gap: 10px;
 }
 .clinical-stat-icon {
-  color: #00646d;
+  color: #0648D7;
 }
 .clinical-care-stats .stat-foot {
   display: flex;
@@ -924,10 +924,10 @@
   padding: 4px 5px;
   border-radius: 2px;
   background: #e7eae9;
-  color: #58656b;
+  color: #526175;
 }
 .clinical-care-tabs .tab.active > span {
-  background: #00646d;
+  background: #0648D7;
   color: #fff;
 }
 .clinical-view-toggle {
@@ -942,7 +942,7 @@
 .clinical-view-toggle .icon-btn {
   width: 35px;
   height: 34px;
-  color: #58656b;
+  color: #526175;
   border-radius: 2px;
   border: 0;
   background: transparent;
@@ -992,7 +992,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #58656b;
+  color: #526175;
 }
 .clinical-care-grid {
   display: grid;
@@ -1045,7 +1045,7 @@
 .clinical-care-code {
   font-size: 12px;
   letter-spacing: 0.25px;
-  color: #58656b;
+  color: #526175;
 }
 .clinical-care-person {
   display: flex;
@@ -1090,7 +1090,7 @@
 .clinical-care-complaint {
   font-size: 14px;
   line-height: 1.6;
-  color: #58656b;
+  color: #526175;
   margin: 0 0 20px;
   min-height: 70px;
 }
@@ -1117,7 +1117,7 @@
 }
 .clinical-care-meta > div > svg {
   flex-shrink: 0;
-  color: #58656b;
+  color: #526175;
 }
 .clinical-care-meta > div > span {
   overflow: hidden;
@@ -1128,7 +1128,7 @@
   width: 32px !important;
   height: 32px !important;
   margin: -4px 0 -4px auto;
-  color: #58656b;
+  color: #526175;
   border: 0 !important;
   flex-shrink: 0;
 }
@@ -1168,7 +1168,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  color: #58656b;
+  color: #526175;
 }
 .clinical-care-empty h3 {
   color: var(--ink);
@@ -1189,7 +1189,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: #58656b;
+  color: #526175;
   padding: 5px 0 12px;
 }
 .clinical-care-table .patient-cell small {
@@ -1228,8 +1228,8 @@
   align-items: center;
   gap: 12px;
   padding: 15px;
-  background: #f5f5f2;
-  border: 1px solid #d9dee0;
+  background: #F3F6F9;
+  border: 1px solid #DCE5EF;
   border-radius: 2px;
   margin-bottom: 22px;
 }
@@ -1264,7 +1264,7 @@
 }
 .clinical-modal-patient ~ form .clinical-confirm {
   font-size: 12px;
-  background: #f5f5f2;
+  background: #F3F6F9;
   padding: 14px;
   border-radius: 2px;
 }

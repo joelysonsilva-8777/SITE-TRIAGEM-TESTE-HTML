@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "MedFast · Conectando cuidados",
+    "slug": "medfast-native",
+    "scheme": [
+      "medfast",
+      "clara"
+    ],
+    "version": "1.1.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "com.clara.cuidados",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.clara.cuidados",
+      "adaptiveIcon": {
+        "backgroundColor": "#F3F6F9",
+        "foregroundImage": "./assets/icon.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "name": "MedFast · Conectando cuidados",
+      "themeColor": "#0648D7"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-sharing",
+      "expo-router"
+    ]
+  }
+}

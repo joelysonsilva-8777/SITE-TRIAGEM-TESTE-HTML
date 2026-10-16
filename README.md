@@ -1,8 +1,19 @@
-# Clara.
+# MedFast
 
 Uma interface de acolhimento e gestão do cuidado, com **7 páginas em HTML, CSS e JavaScript**, navegação integrada e um fluxo completo de demonstração: cadastro → triagem → fila → atendimento → finalização.
 
-A identidade visual reúne cabeçalho institucional, navegação horizontal, superfícies brancas, petróleo **`#00646d`**, detalhes em âmbar e cantos de **0 a 2 px**. A interface usa Source Sans 3 nos controles e textos, Source Serif 4 nas chamadas editoriais e fotografias de banco com pessoas reais. No celular, a navegação se recolhe em um menu e os componentes se reorganizam para a largura disponível.
+A identidade MedFast usa **Poppins**, azul **`#0648D7`**, verde-água **`#19C7C4`**, superfícies claras e cartões arredondados. O símbolo reúne a letra M, coração e estetoscópio, seguindo a referência visual fornecida. No celular, a navegação se recolhe em um menu e os componentes se reorganizam. A paleta de classificação clínica mantém suas cores próprias.
+
+## Aplicativos
+
+| Versão | Pasta e instruções |
+| --- | --- |
+| HTML, CSS e JavaScript | Esta raiz; `npm start` |
+| React web | [medfast-web](medfast-web/README.md); `npm run dev` |
+| React Native / Expo | [medfast-native](medfast-native/README.md); `npm start` |
+| Windows, offline e Firebase | [medfast-desktop](medfast-desktop/README.md); executáveis em `release/` após `npm run dist:win` |
+
+As quatro versões compartilham a [identidade MedFast](docs/IDENTIDADE-MEDFAST.md). Os identificadores de armazenamento anteriores foram mantidos para preservar os dados. A sincronização Firebase e os backups criptografados pertencem à versão Windows; as outras versões continuam sendo demonstrações locais.
 
 ## Abrir o projeto
 
@@ -88,9 +99,9 @@ Com o servidor em execução, `node tests/edge-flows.cjs` verifica os cenários 
 
 Os estilos ficam em `assets/css/`; a persistência, os componentes compartilhados e as páginas estão separados em `assets/js/`. A aplicação não depende de frameworks ou serviços externos para funcionar. As dependências npm são utilizadas apenas para testes.
 
-As fontes **Source Sans 3** e **Source Serif 4** são servidas localmente, em `assets/fonts/`, com suas respectivas licenças SIL Open Font License: [Source Sans 3](assets/fonts/sourcesans3-OFL.txt) e [Source Serif 4](assets/fonts/sourceserif4-OFL.txt).
+As fontes **Poppins Regular, Medium, SemiBold e Bold** são servidas localmente, em `assets/fonts/`, sob a [SIL Open Font License](assets/fonts/poppins-OFL.txt). Não dependem de Google Fonts ou de conexão durante o uso. `npm run brand:sync` distribui os recursos da identidade para os aplicativos; `npm run brand:icons` gera os ícones nativos e do Windows.
 
-As fotografias licenciadas do Pexels ficam em `assets/images/` e também são carregadas localmente. São imagens ilustrativas; as pessoas retratadas não correspondem às identidades fictícias do cadastro. Os créditos, os links originais e os detalhes da licença estão em [Fotografias do Clara](docs/FOTOGRAFIAS.md).
+As fotografias licenciadas do Pexels ficam em `assets/images/` e também são carregadas localmente. São imagens ilustrativas; as pessoas retratadas não correspondem às identidades fictícias do cadastro. Os créditos, os links originais e os detalhes da licença estão em [Fotografias do MedFast](docs/FOTOGRAFIAS.md).
 
 ## Escopo da demonstração
 
